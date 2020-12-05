@@ -606,6 +606,15 @@ public class Game extends JFrame {
             }
         });
 
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                difficultySelectionFrame.dispose();
+                if (!"0".equals(secondCount.getText()))
+                    time.start();
+            }
+        });
+
         buttonGroup.add(easyButton);
         buttonGroup.add(mediumButton);
         buttonGroup.add(difficultButton);
@@ -802,7 +811,8 @@ public class Game extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 aboutDialog.dispose();
-                time.start();
+                if (!"0".equals(secondCount.getText()))
+                    time.start();
             }
         });
 
@@ -841,7 +851,8 @@ public class Game extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 helpDialog.dispose();
-                time.start();
+                if (!"0".equals(secondCount.getText()))
+                    time.start();
             }
         });
 
